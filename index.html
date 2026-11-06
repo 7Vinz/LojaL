@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja do Leôncio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="#inicio" class="logo-lockup">
+        <img src="imgs/Loja.jpg" alt="Logotipo da Loja do Leôncio">
+        <span>Loja do Leôncio</span>
+      </a>
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="#inicio" class="ativo">Início</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#carrinho">Carrinho <span id="carrinho-contador" class="carrinho-contador">0</span></a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <div class="saldo-moedas">🪙 1300</div>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+    </div>
+  </header>
+
+  <!-- ===== Início ===== -->
+  <section id="inicio">
+    <div class="hero">
+      <div class="container hero-conteudo">
+        <img src="imgs/Loja.jpg" alt="Leôncio, dono da loja" class="imagem-destaque">
+        <div>
+          <h1>Loja do Leôncio</h1>
+          <p>Leôncio percorreu Demacia, Noxus e Zaun para reunir os equipamentos iniciais mais confiáveis de Runeterra. Sem enrolação, sem item fraco na prateleira.</p>
+          <a href="#produtos" class="btn btn-primary">Ver todos os produtos</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2 class="section-titulo">Sobre nós</h2>
+      <p class="section-intro">
+        A Loja do Leôncio nasceu na estrada, num carrinho puxado por cabras através dos três reinos.
+        Hoje é ponto de parada obrigatório para quem entra na Fenda do Invocador: cada item é escolhido
+        pessoalmente por Leôncio, testado em batalha e vendido pelo preço justo — sem enrolação e sem
+        item fraco na prateleira.
+      </p>
+
+      <h2 class="section-titulo">Produtos em destaque</h2>
+      <p class="section-intro">Uma seleção dos itens mais procurados por invocadores de todos os níveis.</p>
+      <div class="Trilho" id="produtos-destaque"></div>
+    </div>
+  </section>
+
+  <!-- ===== Produtos ===== -->
+  <section id="produtos">
+    <div class="container">
+      <h2 class="section-titulo">Todos os produtos</h2>
+      <p class="section-intro">Clique em "Comprar" para ver os detalhes de qualquer item antes de levá-lo para a Fenda.</p>
+      <div id="catalogo-produtos"></div>
+    </div>
+  </section>
+
+  <!-- ===== Detalhes do produto (painel que abre ao clicar em Comprar) ===== -->
+  <section id="detalhes">
+    <div class="container">
+      <a href="#produtos" class="voltar-link">&larr; Voltar aos produtos</a>
+      <div class="detalhes-produto" id="detalhes-produto">
+        <!-- Preenchido dinamicamente pelo script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Carrinho ===== -->
+  <section id="carrinho">
+    <div class="container">
+      <h2 class="section-titulo">Sua sacola</h2>
+      <p class="section-intro">Itens adicionados à sacola ficam salvos mesmo se você fechar a página.</p>
+      <div id="carrinho-lista"></div>
+      <p class="carrinho-total" id="carrinho-total"></p>
+    </div>
+  </section>
+
+  <!-- ===== Contato ===== -->
+  <section id="contato">
+    <div class="container contato-grid">
+      <div class="contato-formulario">
+        <h2 class="section-titulo">Fale com Leôncio</h2>
+        <p class="section-intro">Dúvidas sobre um item, um pedido especial ou só quer bater um papo? Mande sua mensagem.</p>
+
+        <form id="form-contato" novalidate>
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome">
+
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com">
+
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui"></textarea>
+
+          <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+          <p id="status-formulario" class="status-formulario" role="status"></p>
+        </form>
+      </div>
+
+      <div class="contato-info">
+        <h2 class="section-titulo">Informações</h2>
+        <p><strong>Telefone:</strong> (99) 99999-9999</p>
+        <p><strong>E-mail:</strong> contato@lojadoleoncio.com</p>
+        <p><strong>Endereço:</strong> Vale dos Invocadores, Runeterra</p>
+        <p><strong>Horário:</strong> Todos os dias, das 8h às 22h</p>
+        <div class="contato-mapa">
+          <img src="imgs/Mapa.png" alt="Mapa de localização da loja">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <h3>Contato e Localização</h3>
+      <div class="footer-conteudo">
+        <div class="footer-contato">
+          <p><strong>Telefone:</strong> (99) 99999-9999</p>
+          <p><strong>E-mail:</strong> contato@lojadoleoncio.com</p>
+          <p><strong>Endereço:</strong> Vale dos Invocadores</p>
+        </div>
+        <div class="footer-mapa">
+          <img src="imgs/Mapa.png" alt="Mapa de localização da loja">
+        </div>
+      </div>
+      <div class="footer-social">
+        <a href="#">Instagram</a>
+        <a href="#">Discord</a>
+        <a href="#">X (Twitter)</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
