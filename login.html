@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar — Loja do Leôncio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="pagina-auth">
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo-lockup">
+        <img src="imgs/Loja.jpg" alt="Logotipo da Loja do Leôncio">
+        <span>Loja do Leôncio</span>
+      </a>
+      <a href="index.html" class="voltar-link" style="margin:0">&larr; Voltar à loja</a>
+    </div>
+  </header>
+
+  <main class="auth-layout container">
+    <div class="auth-boasvindas">
+      <img src="imgs/Loja.jpg" alt="Leôncio, dono da loja" class="imagem-destaque">
+      <h1>Sua conta na Fenda</h1>
+      <p>Entre para guardar a sacola, pagar com moedas e acompanhar seu saldo. Quem cria uma conta nova começa com 🪙 1300 moedas.</p>
+    </div>
+
+    <div class="auth-cartao">
+      <div class="auth-abas" role="tablist">
+        <button type="button" class="auth-aba ativa" data-aba="entrar" role="tab" aria-selected="true">Entrar</button>
+        <button type="button" class="auth-aba" data-aba="registrar" role="tab" aria-selected="false">Criar conta</button>
+      </div>
+
+      <p class="auth-aviso" id="auth-aviso" hidden>Entre na sua conta para adicionar itens à sacola.</p>
+      <p class="auth-erro" id="auth-erro" role="alert" hidden></p>
+
+      <form id="form-entrar" class="auth-form">
+        <label for="identificador">E-mail ou nome de usuário</label>
+        <input type="text" id="identificador" name="identificador" autocomplete="username" placeholder="voce@gmail.com" required>
+
+        <label for="senha-entrar">Senha</label>
+        <input type="password" id="senha-entrar" name="senha" data-senha autocomplete="current-password" required>
+
+        <label class="mostrar-senha-rotulo"><input type="checkbox" class="mostrar-senha"> Mostrar senha</label>
+        <button type="submit" class="btn btn-primary">Entrar</button>
+      </form>
+
+      <form id="form-registrar" class="auth-form" hidden>
+        <label for="nome_usuario">Nome de usuário</label>
+        <input type="text" id="nome_usuario" name="nome_usuario" autocomplete="username" minlength="3" maxlength="20" pattern="[A-Za-z0-9_]+" required>
+        <small>3 a 20 caracteres: letras, números ou _</small>
+
+        <label for="email-registrar">E-mail</label>
+        <input type="email" id="email-registrar" name="email" autocomplete="email" placeholder="voce@gmail.com" required>
+
+        <label for="senha-registrar">Senha</label>
+        <input type="password" id="senha-registrar" name="senha" data-senha autocomplete="new-password" minlength="8" maxlength="72" required>
+        <small>Mínimo de 8 caracteres</small>
+
+        <label for="confirmar">Repita a senha</label>
+        <input type="password" id="confirmar" name="confirmar" data-senha autocomplete="new-password" required>
+
+        <label class="mostrar-senha-rotulo"><input type="checkbox" class="mostrar-senha"> Mostrar senhas</label>
+        <button type="submit" class="btn btn-primary">Criar conta</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="api.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>

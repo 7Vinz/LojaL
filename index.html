@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-Br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,12 +22,18 @@
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
-      <div class="saldo-moedas">🪙 1300</div>
+      <div class="conta">
+        <a href="login.html" class="btn conta-entrar" id="link-entrar">Entrar</a>
+        <div class="conta-logado" id="conta-logado" hidden>
+          <span class="conta-nome" id="conta-nome"></span>
+          <div class="saldo-moedas">🪙 <span id="saldo-valor">0</span></div>
+          <button type="button" class="btn-sair" id="btn-sair">Sair</button>
+        </div>
+      </div>
       <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">☰</button>
     </div>
   </header>
 
-  <!-- ===== Início ===== -->
   <section id="inicio">
     <div class="hero">
       <div class="container hero-conteudo">
@@ -55,7 +61,6 @@
     </div>
   </section>
 
-  <!-- ===== Produtos ===== -->
   <section id="produtos">
     <div class="container">
       <h2 class="section-titulo">Todos os produtos</h2>
@@ -64,27 +69,34 @@
     </div>
   </section>
 
-  <!-- ===== Detalhes do produto (painel que abre ao clicar em Comprar) ===== -->
   <section id="detalhes">
     <div class="container">
       <a href="#produtos" class="voltar-link">&larr; Voltar aos produtos</a>
       <div class="detalhes-produto" id="detalhes-produto">
-        <!-- Preenchido dinamicamente pelo script.js -->
       </div>
     </div>
   </section>
 
-  <!-- ===== Carrinho ===== -->
   <section id="carrinho">
     <div class="container">
       <h2 class="section-titulo">Sua sacola</h2>
-      <p class="section-intro">Itens adicionados à sacola ficam salvos mesmo se você fechar a página.</p>
+      <p class="section-intro">Os itens ficam salvos na sua conta, em qualquer dispositivo.</p>
       <div id="carrinho-lista"></div>
-      <p class="carrinho-total" id="carrinho-total"></p>
+
+      <div class="pagamento" id="pagamento" hidden>
+        <h3>Pagamento</h3>
+        <dl class="pagamento-resumo">
+          <div><dt>Total da sacola</dt><dd id="pg-total"></dd></div>
+          <div><dt>Seu saldo</dt><dd id="pg-saldo"></dd></div>
+          <div><dt>Saldo após a compra</dt><dd id="pg-restante"></dd></div>
+        </dl>
+        <p class="pagamento-forma">Forma de pagamento: moedas do invocador</p>
+        <button type="button" class="btn btn-primary" id="btn-pagar">Pagar com moedas</button>
+      </div>
+      <p id="pagamento-status" class="status-formulario" role="status"></p>
     </div>
   </section>
 
-  <!-- ===== Contato ===== -->
   <section id="contato">
     <div class="container contato-grid">
       <div class="contato-formulario">
@@ -140,6 +152,7 @@
     </div>
   </footer>
 
+  <script src="api.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
