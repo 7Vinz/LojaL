@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar — Loja do Leôncio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="pagina-login">
+
+  <main class="login-cartao">
+    <a href="index.html" class="login-medalhao" aria-label="Voltar para a loja">
+      <img src="imgs/Loja.jpg" alt="Logotipo da Loja do Leôncio">
+    </a>
+
+    <h1>Loja do Leôncio</h1>
+    <p class="login-subtitulo">Entre para guardar suas compras e pagar com suas moedas.</p>
+
+    <div class="login-abas" role="tablist">
+      <button type="button" role="tab" id="aba-entrar" aria-selected="true" aria-controls="form-login">Entrar</button>
+      <button type="button" role="tab" id="aba-cadastro" aria-selected="false" aria-controls="form-cadastro">Criar conta</button>
+    </div>
+
+    <!-- Entrar: e-mail OU nome de usuário -->
+    <form id="form-login" class="login-form" role="tabpanel" aria-labelledby="aba-entrar" novalidate>
+      <label for="login-identificador">E-mail ou nome de usuário</label>
+      <input type="text" id="login-identificador" autocomplete="username" placeholder="voce@gmail.com ou seu_usuario">
+
+      <label for="login-senha">Senha</label>
+      <input type="password" id="login-senha" autocomplete="current-password">
+
+      <button type="submit" class="btn btn-primary">Entrar</button>
+    </form>
+
+    <!-- Criar conta -->
+    <form id="form-cadastro" class="login-form" role="tabpanel" aria-labelledby="aba-cadastro" hidden novalidate>
+      <label for="cadastro-usuario">Nome de usuário</label>
+      <input type="text" id="cadastro-usuario" autocomplete="username" maxlength="20" placeholder="3 a 20 letras, números ou _">
+
+      <label for="cadastro-email">E-mail</label>
+      <input type="email" id="cadastro-email" autocomplete="email" placeholder="voce@gmail.com">
+
+      <label for="cadastro-senha">Senha</label>
+      <input type="password" id="cadastro-senha" autocomplete="new-password" placeholder="Mínimo de 8 caracteres">
+
+      <label for="cadastro-senha2">Repita a senha</label>
+      <input type="password" id="cadastro-senha2" autocomplete="new-password">
+
+      <button type="submit" class="btn btn-primary">Criar conta e ganhar 🪙 1300</button>
+    </form>
+
+    <p id="login-status" class="status-formulario" role="status"></p>
+    <a href="index.html" class="login-voltar">&larr; Voltar à loja</a>
+  </main>
+
+  <script src="api.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>
